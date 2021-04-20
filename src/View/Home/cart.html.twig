@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<h1>Cart</h1>
+<table>
+    <tr>
+        <th>Article</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Total</th>
+        <th>Action</th>
+    </tr>
+    {% for art in cart %}
+        <tr>
+            <td>{{art.title}}</td>
+            <td>{{art.price}} €</td>
+            <td>{{art.qty}}</td>
+            <td>{{art.qty * art.price}}</td>
+            <td><a href="/home/deleteFromCart/{{art.id}}">Delete from cart</a></td>
+        </tr>
+        {% endfor %}
+</table>
+
+<h3>TOTAL : {{totalCart}} €</h3>
+
+{% endblock %}

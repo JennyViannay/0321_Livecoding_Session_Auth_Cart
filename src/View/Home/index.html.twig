@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Hello {{session.user.username}} !</h1>
+
+    {% for art in articles %}
+        <div class="">
+            <h2>{{art.title}}</h2>
+            <a href="/home/addToCart/{{art.id}}">Add To Cart</a>
+        </div>
+    {% endfor %}
+{% endblock %}
